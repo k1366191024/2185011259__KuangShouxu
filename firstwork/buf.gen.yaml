@@ -1,0 +1,10 @@
+version: v1
+plugins:
+  - name: cpp
+    out: gen/cpp
+  - name: java
+    out: gen/java
+  - name: go
+    out: gen/go
+  - name: python
+    out: gen/python

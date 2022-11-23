@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myserver
+  labels:
+    name: myserver
+spec:
+  selector:
+    matchLabels:
+      name: myserver
+  template:
+    metadata:
+      labels:
+        name: myserver
+    spec:
+      containers:
+        - name: myserver
+          image: kuangkkk/server 
+          ports:
+            - containerPort: 1235 

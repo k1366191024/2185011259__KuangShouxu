@@ -1,20 +1,12 @@
 ## 2185011259_KuangShouxu 
 
 ## 基本题目
+完成了在minikube的部署
 
-请基于//gen目录下的桩代码，基于自己熟悉的程序语言开发对应的服务端程序和客户端程序。
-
-基本要求：
-服务端程序提供PutPet、GetPet、DeletePet三个接口，客户端访问这三个服务进行宠物数据的写入、查询和删除操作。
-
-完成情况：
-完成go 客户端和服务器端的代码
-
-运行方法：
-在根目录下，分别运行
-go run server/main.go 
-go run client/main.go
-即可
-
-问题和进一步思考：
-当多个客户端发生读写，写读和写写冲突的时候怎么办
+过程：
+  先将实验一在docker下生成镜像，再在Depolment.yaml配置文件和server.yaml配置文件下生成POD和将网络的接口暴露，在本地打开client，检验验证正确
+  仍然能正常工作
+  ![image](https://user-images.githubusercontent.com/64403824/203555310-8dde585e-48d4-40a3-bd03-ba61d4baab8e.png)
+  
+  kubectl port-forward deployment myserver  1235:1235 在端口转发下连接外部端口，以下是在shell的验证
+![image](https://user-images.githubusercontent.com/64403824/203556494-fc0d6d52-b067-424a-881e-bcb1e0f3eeec.png)
